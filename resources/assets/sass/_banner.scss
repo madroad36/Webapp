@@ -1,0 +1,132 @@
+#zbanner{
+    .btn{
+        border-radius: 0%;
+    }
+    .btn-zprimary{
+        color: #fff;
+        background-color: #236E96;
+        border-color: #236E96;
+    }
+    .btn-zprimary:hover{
+        color: #236E96;
+        
+        background-color: #fff;
+    }
+    .btn-zcta{
+        border-radius: 30px;
+        color: #fff;
+        background-color: #F7931E;
+        border-color: #F7931E;
+    }
+    .btn-zcta:hover{
+        color: #F7931E;
+        background-color: #fff;
+    }
+}
+/* Banner Slider */
+#zbanner .navbar{
+    padding: 0px;
+}
+#zbanner .bg-light{
+    box-shadow: 0 2px 6px #b6b6b6 ;
+}
+#zbanner .carousel-indicators{
+    margin: 0px;
+    top: 25px;
+    left: 120px;
+    right: auto;
+    bottom: auto;
+}
+#zbanner .carousel-indicators li{
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left:auto;
+    text-indent: 0px;
+    border: none;
+    text-align: center !important;
+    padding: 16px 24px;
+    color: #236E96;
+    background-color: transparent;
+}
+#zbanner .carousel-indicators li:hover,#zbanner .carousel-indicators li.active{
+    border-bottom: #236E96 3px solid;
+    margin-bottom: -3px;
+}
+#zbanner .carousel-inner{
+    overflow: visible;
+}
+#zbanner .carousel-inner img{
+    width: 100%;
+    height: auto;
+}
+#zbanner .carousel-indicators nav #banner img{
+    height: 40px;
+    padding-bottom: 20px;
+    width: auto;  
+}
+#zbanner .carousel-caption{
+    bottom: auto;
+    text-align: left;
+    left: 120px;
+    top: 120px;
+    color: black;
+    background-color: #fff;
+    width: 30vw;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#zbanner .carousel-caption-heading{
+    padding-bottom: 12px;
+}
+#zbanner h3{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #236E96;
+    line-height: 3rem;
+    padding: 20px 0px;
+}
+#zbanner span{
+    font-size: 0.8rem;
+    color: #236E96;
+    font-weight: 300;
+}
+#zbanner p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: 20px;
+    color: #236E96;
+}
+#zbanner .dropdown-header span{
+    color:gray;
+}
+#zbanner .dropdown-item.active,#zbanner .dropdown-item:active{
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 992px){
+
+    #zbanner .carousel-indicators{
+      position: unset;
+    }
+    #zbanner .navbar-nav{
+        flex-direction: row;
+        width: 90vw;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    #zbanner .carousel-caption{
+        position: unset;
+        width: 100%;
+    }
+    #zbanner .carousel-inner img{
+        position: unset;
+        order: 2;
+    }
+    .carousel-item.active{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,167 @@
+//group card title and content end
+.home-display{
+    .title{
+        h2{
+            font-size: 2rem;
+            font-weight: 500;
+            color: $zprime;
+            &::after{
+                display: block;
+                content: '';
+                padding-bottom: 4px;
+                border-bottom: 4px solid $zprime;
+                transform: scaleX(0.015);
+                transform-origin: 0% 25%;
+            }
+        }
+        span{
+            font-weight: 300;
+        }
+        >a{
+            padding-left: 4px;
+            color: $zdark;
+            border-bottom: 2px solid $zdark;
+        }
+        h3{
+            font-size: 1.2rem;
+            color: $zdark;
+        }
+        .sub-title{
+            font-size: 0.8rem;
+            color: $zgrey;
+            padding-bottom: 0.8rem;
+            i{
+                margin-right: 0.8rem;
+            }
+            p{
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+    }
+    .box {
+        position: relative;
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+    .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    }
+    .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(50deg, $zprime 0%, $zprime-2 100%);
+    background-color: $zdark;
+    transition: background-image 1s;
+    }
+    .box .text {
+    color: white;
+    // text-shadow: 2px 2px $zdark;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    }
+    .card-notify{
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        text-align: center;
+        color: $zlight;
+        font-size: 14px;
+        .premium{
+            background: rgb(69,176,69);
+            background: linear-gradient(105deg, rgba(69,176,69,1) 0%, rgba(227,199,112,1) 100%);
+            padding: 5px 10px;
+            border-radius: 25px;
+            margin-top: 10px;
+            white-space: preline;
+        }
+        .sale{
+            background: rgb(69,87,176);
+            background: linear-gradient(105deg, rgba(69,87,176,1) 0%, rgba(227,150,112,1) 100%);
+            padding: 5px 10px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+    }
+    .card-body{
+        .features ul li{
+            color: $zgrey;
+            &:not(:last-child){
+                padding-right: 0.8rem;
+            }
+            i:not(:last-child){
+                padding-right: 0.5rem;
+            }
+            span{
+                color: $zprime-2;
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+        }
+        .price{
+            p{
+            color: $zdark;
+            }
+            p.actual{
+                color: $zgrey;
+                margin-bottom: 0.4rem;
+            }
+            span.actual-price{
+                text-decoration: line-through;
+                font-weight: 300;
+            }
+            span.discount-percentage{
+                color: $zprime-2;
+                padding-left: 0.1rem;
+            }
+        }
+    }
+    .content a:hover .card-body{
+        .title h3{
+            color: $zprime-2;
+        }
+        .price p.current-price{
+            color: $zprime-2;
+        }
+    }
+}
+.products .home-display .card-body .title{
+    h3{
+        font-size: 1rem;
+    }
+}
+.overlay-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(50deg, $zprime 0%, $zprime-2 100%);
+    background-color: $zdark;
+    transition: background-image 1s;
+    }
+
+// group card title and content end

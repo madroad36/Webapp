@@ -1,0 +1,36 @@
+
+// Import Fonts Google
+@import url('https://fonts.googleapis.com/css?family=Sofia&display=swap');
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Default css
+@import 'default';
+
+//Style
+@import "frontendStyle";
+
+// header
+@import "header";
+
+// Modal
+@import "modal";
+
+// footer
+@import "footer";
+
+// bootstrap select
+@import "bootstrap-select.min";
+
+// lightslider (Slider css)
+@import "lightslider.min";
+
+//Banner css
+@import "banner";
+
+// Product display (Properties and Product Slider)
+@import "product-display";

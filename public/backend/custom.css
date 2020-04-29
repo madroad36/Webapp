@@ -1,0 +1,885 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?3p0rtw');
+    src:url('fonts/icomoon.eot?#iefix3p0rtw') format('embedded-opentype'),
+    url('fonts/icomoon.woff?3p0rtw') format('woff'),
+    url('fonts/icomoon.ttf?3p0rtw') format('truetype'),
+    url('fonts/icomoon.svg?3p0rtw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #3c8dbc !important;
+    padding: 1px 10px;
+    color: #fff;
+}
+
+.select2-selection--multiple .select2-search--inline .select2-search__field {
+    width: auto !important;
+}
+.dropzone {
+    position: relative;
+    border: 2px dashed #ddd;
+    min-height: 250px;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 5px;
+}
+.dropzone .dz-default.dz-message {
+    position: absolute;
+    height: 230px;
+    width: 100%;
+    margin-top: -130px;
+    top: 50%;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+.dropzone.dz-clickable, .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message span {
+    cursor: pointer;
+}
+..dz-default.dz-message {
+    position: relative;
+    display: block;
+}
+.dz-default.dz-message:before {
+    content: '\ea0e';
+    font-family: 'icomoon';
+    font-size: 64px;
+    position: absolute;
+    top: 48px;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    left: 50%;
+    margin-left: -32px;
+    line-height: 1;
+    z-index: 2;
+    color: #ddd;
+    text-indent: 0;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dropzone .dz-default.dz-message span {
+    font-size: 15px;
+    color: #bbb;
+    text-align: center;
+    margin-top: 140px;
+    display: block;
+    font-weight: 500;
+    text-shadow: 0 1px 1px #fff;
+}
+
+
+
+
+.gallery-image .card {
+    position: relative;
+    margin-bottom: 25px;
+}
+.gallery-image  .card:hover .card-img-actions-overlay {
+    opacity: 1;
+
+}
+
+
+.btn-outline.disabled, .btn-outline:disabled, .btn-outline:not(:hover):not(:active):not(.active):not([aria-expanded=true]) {
+    background-color: transparent!important;
+}
+.card-img-actions-overlay {
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.card-img-actions-overlay a {
+    margin-top: 30%;
+}
+
+
+.btn-outline.disabled, .btn-outline:disabled, .btn-outline:not(:hover):not(:active):not(.active):not([aria-expanded=true]) {
+    background-color: transparent!important;
+}
+.imagePreview, .imageView {
+    width: 100%;
+    height: 270px;
+    background-position: center center;
+    background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+    background-color:#fff;
+    background-size: cover;
+    background-repeat:no-repeat;
+    display: inline-block;
+    box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+#sitelogo .btn-primary,#national .btn-primary
+{
+    display:block;
+    border-radius:0px;
+    box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+    margin-top:-5px;
+}
+.imgUp
+{
+    margin-bottom:15px;
+}
+.del
+{
+    position:absolute;
+    top:0px;
+    right:15px;
+    width:30px;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    background-color:rgba(255,255,255,0.6);
+    cursor:pointer;
+}
+#national-id {
+
+    margin-top: 50px;
+}
+
+/* login page forn and design*/
+
+.login-page, .register-page {
+    height: auto;
+    background: #863bff;
+}
+
+
+.login-page .login-wrapper {
+    /*background: #c523a2bd;*/
+    background: #3a7db79e;
+    min-height: 600px;
+    margin: 64px;
+    border-radius: 30px;
+
+}
+.login-page .login-wrapper  .register{
+    background: #3a7db79e;
+    padding: 44px 44px 44px 30px;
+    height: 100%;
+}
+
+.login-wrapper .left-wrapper {
+    display: block;
+    padding: 100px 100px 100px 30px;
+    background: #673ab79e;
+}
+.left-wrapper  .login-left-header h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 300;
+    color: #ffffff;
+}
+.left-wrapper   ul {
+    list-style: none;
+}
+.left-wrapper ul li {
+    margin-bottom: 20px;
+}
+.left-wrapper ul li i
+{
+    font-size: 30px;
+    color: #ffffff;
+}
+.left-wrapper ul li span {
+    font-size: 22px;
+    color: #fff;
+    margin-left: 16px;
+    font-weight: 600;
+    font-family: auto;
+}
+.left-wrapper-list {
+    list-style-type: none;
+    padding: 0px;
+}
+.left-wrapper-list span {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 16px;
+    font-weight: 600;
+    font-family: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+.left-wrapper-list li {
+    display: inline-block;
+    margin-right: 0px;
+}
+.left-wrapper-list li .checkbox{
+    border: 1px solid #0b3e6f;
+}
+.left-wrapper-list li span {
+
+}
+
+.login-right-wrapper {
+    display: block;
+    padding: 101px 34px 40px 27px;
+
+}
+.login-right-wrapper .right-header {
+    float: right;
+    display: block;
+    padding: 11px;
+    font-size: 85px;
+    color: #fff;
+    margin-left: 53px;
+}
+
+.login-right-wrapper .right-header-headding {
+    font-size: 35px;
+    color: #fff;
+    margin-left: 16px;
+    font-weight: 600;
+    font-family: auto;
+    margin-bottom: 30px;
+    margin-top: 21px;
+    display: block;
+}
+
+.login-right-wrapper .form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+.login-right-wrapper label {
+    margin-top: 6px;
+    font-size: 19px;
+    color: #fff;
+    font-family: initial;
+}
+.login-footer {
+    width: 249px;
+    float: right;
+}
+.login-footer button {
+    font-size: 21px;
+    font-family: initial;
+    background: #deaa18;
+    border:none;
+    border-width: 0px;
+}
+.login-footer a, .register-footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 21px;
+    color: #fff0ff;
+    font-family: auto;
+    display: block;
+}
+
+
+.login-footer-btn p{
+    text-align: center;
+    font-size: 25px;
+    font-family: serif;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.login-footer-btn a{
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    padding: 7px;
+    color: #0c0c17;
+    font-size: 19px;
+    font-family: auto;
+    text-align: center;
+}
+.register .login-left-header h3 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.register span{
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 41px;
+    color: #fff;
+    font-family: auto;
+    width: 100%;
+    display: block;
+}
+.register ul li {
+    font-size: 24px;
+    color: #fff;
+    font-family: auto;
+}
+register ul li span {
+    display: inline-block;
+}
+.register ul li:before {
+    content: '✓';
+    margin-right: 11px;
+
+}
+
+.register-form {
+    padding: 26px 34px 40px 27px
+}
+.service-page {
+    margin-top: 50px;
+    padding: 20px;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+.order-side-dash {
+    border: 1px solid;
+    /* padding: 20px 30px 30px 30px; */
+    min-height: 150px;
+    margin-bottom: 30px;
+}
+.order-sidedash-header h4 {
+    padding: 10px 10px 10px 10px;
+    background: blueviolet;
+    color: #fff;
+    font-size: 27px;
+    font-family: initial;
+    margin-top: 0px
+}
+.order-sidedash-image img{
+    width: 100px;
+    padding: 10px 10px 10px 10px;
+}
+.order-service-design ul {
+    list-style-type: none;
+    padding: 0px;
+}
+.order-service-design ul li {
+    font-size: 21px;
+}
+.order-sidedash-image span {
+    position: absolute;
+    margin-top: 26px;
+    right: 111px;
+    font-size: 15px;
+}
+.order-side-dash p {
+    position: absolute;
+    margin-top: 18px;
+    top: 93px;
+    left: 135px;
+    font-size: 18px;
+}
+.card-elegant {
+     background-color: #FAFAFA;
+     box-shadow:0 2px 4px rgba(0,0,0,.25);
+     border: none;
+ }
+.card-elegant .card-block {
+    padding: 20px;
+}
+.card-elegant .card-block strong{
+    font-size: 16px;
+    margin-right: 10px;
+}
+.card-elegant .card-block span {
+    margin-right: 30px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.card-elegant .card-block span:first-child {
+    display: block;
+}
+
+.card-elegant .card-title {
+    font-weight: normal;
+    letter-spacing: .20rem;
+    margin: 2.9rem 0;
+    font-size: 1.2rem;
+    color: #8B9185;
+}
+
+.card-elegant .card-title small {
+    color: #999;
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.card-elegant .card-text {
+    border-bottom: .15rem solid #C7C7C5;
+    color: #AAA7A0;
+    font-size: .8rem;
+    padding-bottom: 2.5rem;
+    margin: 0 auto 2.4rem;
+    max-width: 9.375rem;
+}
+
+.card-elegant .btn-link {
+    color: #8B9185;
+    font-size: .8rem;
+    letter-spacing: .34rem;
+    text-decoration: none;
+}
+
+.card-elegant .btn-link:hover,
+.card-elegant .btn-link:focus {
+    color: #666;
+}
+.order-details-info {
+    padding: 30px
+}
+.owner-information h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+.owner-information {
+    margin-top: 20px;
+}
+.order-details-info span {
+    font-size: 16px;
+    margin-right: 10px;
+    display: block;
+    margin-bottom: 17px;
+}
+.order-details-info span strong {
+    padding-right: 10px;
+}
+.margin-line {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000000;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu li a.active {
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    background: #ee5335;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu li a{
+    color: #000;
+    background: #ecf0f5;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a:hover{
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    background: green;
+}
+.class-form {
+    margin-bottom:15px;
+    border-bottom: 1px;
+}
+#owner-upload-btn {
+    margin-top: 0px !important;
+}
+#hide-upload .hide {
+    display: none;
+}
+#hide-upload .btn {
+    margin-top: 29px;
+    display: inline-block;
+    padding: 9px 28px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #bbbbbb;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #a2a2a2;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#property-date {
+    position: absolute;
+    margin-top: -37px;
+    right: 14px;
+    border-radius: 0px;
+    /* padding: 20px; */
+    height: 36px;
+    width: 60px;
+}
+.aminites-list:first-child {
+    padding-left: 60px;
+}
+.aminites-list {
+    list-style-type: none;
+}
+.aminites-list li {
+    display: inline-block;
+    margin-bottom: 19px;
+}
+#property-add-popup label {
+    float: left;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: initial;
+}
+.main {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Creating a custom checkbox
+based on demand */
+.w3docs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 1px solid #231313a1;
+}
+
+/* Specify the background color to be
+shown when hovering over checkbox */
+.main:hover input ~ .w3docs {
+    background-color: gray;
+}
+
+/* Specify the background color to be
+shown when checkbox is active */
+.main input:active ~ .w3docs {
+    background-color: white;
+}
+
+/* Specify the background color to be
+shown when checkbox is checked */
+.main input:checked ~ .w3docs {
+    background-color: orange;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.w3docs:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked ~ .w3docs:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and
+showing only two border to make it look
+like a tickmark */
+.main .w3docs:after {
+    left: 8px;
+    bottom: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.first-row h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: initial;
+}
+.first-row h3:after {
+
+        display: inline-block;
+        content: "";
+        border-top: .3rem solid #ee5335;
+        width: 100%;
+        margin: -6px 1rem;
+        transform: translateY(-1rem);
+
+}
+
+.aminites-list span {
+    margin-bottom: 17px !important;
+    display: block;
+}
+.broker {
+    margin-left: -33px !important;
+   
+}
+
+    textarea {
+        padding: 30px 0;
+    }
+
+.class-errors{
+    border: 1px solid red !important;
+}
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #000000
+}
+.modal-content .modal-header {
+    background: #ee5335;
+    color: #fff;
+    text-align: center;
+    font-family: Vollkorn;
+    font-size: 30px;
+    font-weight: bold;
+}
+.product-form-header {
+    text-align: center;
+    width: 100%;
+}
+.close-modal, .modal-close {
+    background-color: #fff;
+    color: red;
+    border: none;
+    padding: 0px 12px;
+    font-size: 22px;
+    font-family: Raleway;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+}
+
+#progressbar .step {
+    list-style-type: none;
+    font-size: 12px;
+    width: 19%;
+    float: left;
+    position: relative
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f023"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f09d"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar .step:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+    text-align: center;
+
+}
+
+#progressbar .step:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar .step.active:before,
+#progressbar .step.active:after {
+    background: skyblue
+}
+
+.radio-group {
+    position: relative;
+    margin-bottom: 25px
+}
+
+.radio {
+    display: inline-block;
+    width: 204;
+    height: 104;
+    border-radius: 0;
+    background: lightblue;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 8px 2px
+}
+
+.radio:hover {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3)
+}
+
+.radio.selected {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+.tab, .edit {
+    display: none;
+}
+button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+}
+#prevBtn, #previousBtn {
+    float: left;
+}
+#prevBtn {
+    background-color: #50af50;
+}
+#nextBtn, #EditnextBtn {
+    float:right;
+}
+.ownerUpload {
+    margin-top: -29px;
+}
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+#property-search-form .ui-autocomplete-input, .product-search-bar .ui-autocomplete-input, #shipping-address, #city, #address, #property-search-form .ui-autocomplete-input {
+    border: 1px solid #DDD !important;
+    font-size: 18px;
+    font-family: Vollkorn;
+}
+.ui-autocomplete-input {
+    border: none;
+    font-size: 18px;
+    height: 39px;
+    margin-bottom: 5px;
+    padding-top: 2px;
+    border: 0px solid #DDD !important;
+    /* z-index: 1511; */
+    position: relative;
+    font-family: Vollkorn;
+}      
+.city-list, .address-list {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 186px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style-type: none;
+}
+
+.city-list li a, .address-list li a {
+    color: black;
+    padding: 7px 1em 3px .4em;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    height: 32px;
+}
+
+.city-list ul li a:hover {
+    background-color: #ddd;
+}
+
+
+@media screen and (max-width: 441px){
+
+    .login-page  .left-wrapper {
+        display: none;
+    }
+    .login-right-wrapper {
+        margin: 10px;
+        padding: 0px 1px 0px 0px;
+    }
+    .login-page .login-wrapper {
+        margin: 10px;
+    }
+    .login-page .login-wrapper .register {
+        background: #3a7db79e;
+        padding: 0px 0px 0px 30px;
+        height: 100%;
+        display: none;
+    }
+    .login-right-wrapper .right-header {
+        float: right;
+        display: block;
+        font-size: 84px;
+        color: #fff;
+        margin-left: 16px;
+        margin-top: -24px;
+    }
+    .login-right-wrapper .right-header-headding {
+        font-size: 29px;
+        color: #fff;
+        margin-left: 16px;
+        font-weight: 600;
+        font-family: auto;
+        margin-bottom: 30px;
+        margin-top: 21px;
+        display: block;
+    }
+    .login-footer {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+        position: absolute;
+        right: 0;
+        left: auto;
+        width: 342px !important;
+      }
+}

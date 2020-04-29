@@ -1,0 +1,59 @@
+.top-bar .modal{
+    background-color: rgba($color: $zprime, $alpha: 0.5);
+    font-weight: 300;
+    .modal-content{
+    border-radius: 1rem;
+        .modal-header{
+            .title span{
+                color: $zprime;
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+            .close-modal{
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                    i{
+                    font-size: 1.2rem;
+                    color: #ff605c;
+                    opacity: 1;
+                    transition: opacity 0.3s ease-out;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            span.input-group-text i{
+                color: $zprime;
+            }
+            .register-header{
+                h3{
+                    color: $zprime;
+                }
+                span{
+                    font-weight: 400;
+                }
+            }
+            .form-control{
+                font-size: 1rem;
+                font-weight: 300;
+            }
+            .invalid{
+                font-size: 0.8rem;
+                font-weight: 300;
+                color: red;
+            }
+            .register-form .register-footer{
+                span:nth-child(1){
+                    font-weight: 400;
+                    color: $zprime-2;
+                }
+                span a,span i{
+                    font-size: 0.8rem;
+                    color: $zprime;
+                }
+            }
+        }
+    }
+}

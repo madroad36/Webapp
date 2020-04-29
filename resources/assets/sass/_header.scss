@@ -1,0 +1,79 @@
+// Header
+header{
+    background-color: $zprime;
+    .dropdown-menu{
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        border-top: 0.15rem solid $zprime-2;
+        border-bottom: 0.15rem solid $zprime-2;
+        border-right: 0;
+        border-left: 0;
+    }
+    .navbar{
+        box-shadow: 1px 2px 5px rgba($color: $zgrey, $alpha: 0.5);
+    }
+    .dropdown-item{
+        color: $zdark;
+        font-size: 0.9rem;
+        font-weight: 300;
+        padding: 0.5rem 1.5rem;
+    }
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+      }
+      .dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+          pointer-events: none;
+      }
+      
+    .navbar-light .navbar-nav .nav-link{
+        color: $zprime-2;
+        border: 2px solid rgba(255,255,255, 0);
+        transition: all 0.3s ease-out;
+        &:hover{
+            color: $zprime-2;
+            box-sizing: border-box;
+        }
+        &:focus{
+            color: $zprime-2;
+        }
+        &.active{
+            color: #c66e06;
+        }
+    }
+}
+
+header .top-header-text{
+font-family: $zfont;
+font-size: 0.8rem;
+p{
+    color: $zlight;
+}
+.btn{
+    font-size: 0.7rem;
+    color: $zlight;
+    &:focus{
+        box-shadow: 0 0 0 0.2rem rgba(36, 111, 151, 0.25);
+    }
+}
+a.dropdown-item{
+    color: $zdark;
+    &:hover{
+        color: $zprime;
+    }
+}
+a{
+    color: $zlight;
+    font-size: 0.8rem;
+}
+a:hover{
+    color: $zlight;
+    justify-content: center;
+}
+}
+a#home-cart{
+color: $zprime;
+font-weight: 300;
+}
+// top bar end

@@ -1,0 +1,153 @@
+// Default 
+body{
+    margin: 0 auto;
+    padding: 0px;
+    background-color: $body-bg;
+    font-family: $zfont;
+    font-weight: 300;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box !important;
+}
+.container-fluid, .container-md, .container-lg{
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+small{
+    font-size: 1rem;
+    font-weight: 200;
+}
+a:hover{
+    text-decoration: none;
+}
+button{
+    font-family: $zfont !important;
+}
+.btn-primary {
+    color: $zprime;
+    background-color: $zlight;
+    border-color: $zprime;
+    transition: all 0.3s ease-out;
+    &:hover{
+        color: $zlight;
+        background-color: $zprime;
+        border-color: $zprime;
+    }
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    color: $zlight;
+    background-color: $zprime;
+    border-color: $zprime;
+}
+.btn-secondary {
+    color: $zprime-2;
+    background-color: $zlight;
+    border-color: $zprime-2;
+    transition: all 0.3s ease-out;
+    &:hover{
+        color: $zlight;
+        background-color: $zprime-2;
+        border-color: $zprime-2;
+    }
+}
+.btn-info {
+    color: $zlight;
+    background-color: $zprime-2;
+    border-color: $zprime-2;
+    transition: all 0.3s ease-out;
+    &:hover{
+        color: $zprime-2;
+        background-color: $zlight;
+        border-color: $zprime-2;
+    }
+}
+.btn-left{
+    color: $zprime-2;
+    background-color: $zlight;
+    border-color: $zprime-2;
+    border-radius: 5px 0 0 5px;
+    &:hover{
+        color: $zlight;
+        background-color: $zprime-2;
+        border-color: $zprime-2;
+    }
+}
+.btn-right{
+    color: $zprime-2;
+    background-color: $zlight;
+    border-color: $zprime-2;
+    border-radius: 0 5px 5px 0;
+    &:hover{
+        color: $zlight;
+        background-color: $zprime-2;
+        border-color: $zprime-2;
+    }
+}
+.form-control{
+    font-size: 0.90rem;
+    font-weight: 300;
+}
+.filter-option-inner{
+    font-weight: 300;
+    font-size: 14px;
+}
+.form-control:focus{
+    border-color: #236E96;
+    box-shadow: 0 0 0 .2rem rgba(35,110,150,.25);
+}
+.form-control::placeholder{
+    opacity: 0.5;
+}
+label{
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 0rem;
+}
+.dropdown-item{
+    font-weight: 300;
+    font-size: 0.8rem;
+}.dropdown-item.active, .dropdown-item:active{
+    color: $zlight;
+    background-color: $zprime;
+}
+.line{
+    width: 100%;
+    margin: 0.8rem 0 0.8rem 0;
+    border: 1px solid rgba($color: $zgrey, $alpha: 0.5);
+}
+// jumbotron
+.jumbotron .jumbotron-content{
+    border-left: 4px solid $zprime-2;
+    padding-left: 2rem; 
+}
+.jumbotron-heading{
+    color: $zprime-2;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    @media (min-width: 200px) and (max-width: 400px) {
+        font-size: 2rem;
+    }
+}
+.jumbotron-heading-two{
+    font-size: 2rem;
+    color: $zgrey;
+    font-weight: 300;
+    @media (min-width: 200px) and (max-width: 400px) {
+        font-size: 1.8rem;
+    }
+}
+// Default end

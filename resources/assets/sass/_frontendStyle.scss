@@ -1,0 +1,182 @@
+
+// Bottom about zillicom start
+.about-zillicom{
+    font-weight: 300;
+    h2{
+        color: $zprime;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+// Advertisment Section
+.advertisment .carousel-item  img{
+    max-height: 90px;
+    max-width: 728px;
+}
+// Advertisment end
+
+/*
+    Single Product Display
+*/
+    .single-product{
+        font-weight: 300;
+    }
+    .single-product-img{
+        padding: 0.25rem;
+        background-color: #f5f8fa;
+        border: 1px solid #dee2e6;
+        img{
+            max-height: 400px;
+            overflow: hidden;
+        }
+    }
+    input#stepper-input{
+        border: 1px solid $zprime-2;
+        width: 50px;
+        text-align: center;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    .product-price{
+        font-size: 2rem;
+        color: $zprime-2;
+        span{
+            font-weight: 400;
+        }
+    }
+    .product-category{
+        font-size: 0.8rem;
+        color: $zgrey;
+        font-weight: 300;
+    }
+    #cart-submit{
+        font-size: 0.8rem;
+    }
+    
+    .single-product .nav-tabs{
+        font-weight: 400;
+        border-bottom: 2px solid $zprime;
+        .nav-link{
+            color: $zprime;
+            opacity: 0.5;
+            border: 0;
+        }
+        .active{
+            color: $zlight;
+            opacity: 1;
+            background-color: $zprime;
+            border: 2px solid;
+            border-color: $zprime !important;
+            border-left: 0;
+            border-right: 0;
+        } 
+    }
+/*
+    Single Product Display END
+*/
+
+// side-bar
+.left-sidebar{
+    .card-title{
+        font-size: 1.3rem;
+        color: $zprime;
+    }
+}
+// sort icon
+#sort{
+    appearance: none;
+}
+#sort + i.fas{
+    float: right;
+        margin-top: -26px;
+        margin-right: 10px;
+        /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+        pointer-events: none;
+        /* everything after this is just to cover up the original arrow */
+        /* (for browsers that don't support the syntax used above) */
+        background-color: transparent;
+        color:black!important;
+        padding-right: 5px;
+}
+// Slider
+#showImage {
+    height: auto !important;
+    max-height: 400px;
+}
+
+// Page Layout
+.page-banner-image{
+    h1{
+        color: $zlight;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-shadow:    1px 0px 1px #CCCCCC, 
+                        0px 1px 1px #EEEEEE, 
+                        2px 1px 1px #CCCCCC, 
+                        1px 2px 1px #EEEEEE, 
+    }
+    .sub-heading{
+        color: $zprime;
+        font-size: 1rem;
+        &::before{
+            content: '( ';
+            font-weight: 400;
+        }
+        &::after{
+            content: ' )';
+            font-weight: 400;
+        }
+    }
+}
+.page-heading{
+    font-weight: 600;
+    color: #246f97;
+    &::after{
+        display: block;
+        content: '';
+        padding-bottom: 4px;
+        border-bottom: 4px solid #246f97;
+        transform: scaleX(0.015);
+        transform-origin: 0% 25%;
+    }
+}
+// Contact
+.contact-us{
+    i,h6{
+        color: $zprime-2;
+    }
+    ul>li{
+        font-size: 0.8rem;
+    }
+}
+
+.fa-viber{
+    color: #7c529e;
+}
+.fa-whatsapp{
+    color: #40e45d;
+}
+.fa-facebook-messenger{
+    color: #009cfd;
+}
+.fa-facebook{
+    color: #009cfd;
+}
+.fa-instagram{
+    color: #f74e51;
+}
+.fa-twitter{
+    color: #5eaade;
+}
+.fab:hover{
+    opacity: 0.8;
+}

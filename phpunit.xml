@@ -1,0 +1,827 @@
+{{-- @extends('layouts.backend.home')
+
+@section('content')
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li class="active">Add Property</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Add Property</h3>
+                <a href="{{route('admin.property.index')}}" class=" btn btn-primary " style="float: right"><i
+                        class="fa fa-eye" aria-hidden="true"></i> &nbsp; View Property</a>
+
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-8  col-xs-offset-2">
+
+                        {!!
+                        Form::open(array('route'=>'admin.property.store','class'=>'admin-property-store','enctype'=>'multipart/form-data'))
+                        !!}
+                        {{--<form role="form aling-center">--}}
+                        <!-- text input -->
+                        <div class="first-row">
+
+                            <h3>Basic Information</h3>
+                            <div class="class-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Type</label>
+                                            @php $cat = [] @endphp
+
+                                            @foreach($categories as $category)
+
+                                            @php $cat[$category->id] = $category->name @endphp
+                                            @endforeach
+                                            @if($errors->has('category_id'))
+                                            {!! Form::select('category_id',$cat,null,['class'=>'form-control class-errors', 'id'=>'category','placeholder'=>'Select The Category']) !!}
+                                            @else
+                                            {!! Form::select('category_id',$cat,null,['class'=>'form-control','id'=>'category','placeholder'=>'Select The Category']) !!}
+
+                                            @endif
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Purpose</label>
+                                            @if($errors->has('subcategory_id'))
+                                            {!!
+                                            Form::select('subcategory_id',[],null,['class'=>'form-control class-errors','id'=>'subcategory','placeholder'=>'Select
+                                            The Subcategory']) !!}
+                                            @else
+                                            {!!
+                                                Form::select('subcategory_id',[],null,['class'=>'form-control','id'=>'subcategory','placeholder'=>'Select
+                                                The Subcategory']) !!}
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="class-form">
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" name="title" class="form-control {{$errors->has('title') ? 'class-errors':'' }}" placeholder="title"
+                                                value="{{ old('title') }}">
+                                
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="class-form">
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            @php $location = [] @endphp
+
+                                            @foreach( $locations as $value)
+
+                                            @php $location[$value->id] = $value->name @endphp
+                                            @endforeach
+                                            @if ($errors->has('location_id'))
+                                            {!!
+                                            Form::select('location_id',$location,null,['id'=>'location','class'=>'form-control class-errors','placeholder'=>'Select
+                                            The Location']) !!}
+                                            @else
+                                            {!!
+                                            Form::select('location_id',$location,null,['id'=>'location','class'=>'form-control','placeholder'=>'Select
+                                            The Location']) !!}
+                                            
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Place</label>
+                                            @if ($errors->has('place_id'))
+                                            {!!
+                                            Form::select('place_id',[],null,['class'=>'form-control class-errors','id'=>'place','placeholder'=>'Select
+                                            The Area']) !!}
+                                            @else
+                                            {!!
+                                                Form::select('place_id',[],null,['class'=>'form-control','id'=>'place','placeholder'=>'Select
+                                                The Area']) !!}
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+
+                                            <label>LandMark</label>
+                                            <input type="text" name="near_by" class="form-control {{$errors->has('near_by') ? 'class-errors':'' }}"
+                                                placeholder="near location" value="" >
+                                            <div id="title"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class=" form-group ">
+                                            <label for="">Face Direction</label>
+                                            <select name="face" id="" class="form-control  {{$errors->has('face') ? 'class-errors':'' }}">
+                                                <option value="" selected="">Select Face</option>
+                                                <option value="East">East</option>
+                                                <option value="West">West</option>
+                                                <option value="West">North</option>
+                                                <option value="West">South</option>
+
+                                            </select>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="house">
+                                <div class="class-form">
+
+                                    <div class="row">
+    
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Total Room</label>
+                                                <input type="number" min="0" name="total_room"
+                                                    class="form-control  {{$errors->has('total_room') ? 'class-errors':'' }}" placeholder="total room" value=""
+                                                   >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Kitchen</label>
+                                                <input type="number" min="0" name="kitchen" class="form-control  {{$errors->has('kitchen') ? 'class-errors':'' }}"
+                                                    placeholder="kitchen" value="" >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Store</label>
+                                                <input type="number" min="0" name="store" class="form-control  {{$errors->has('store') ? 'class-errors':'' }}"
+                                                    placeholder="store" value="" >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Bathroom</label>
+                                                <input type="number" min="0" name="bathroom" class="form-control  {{$errors->has('bathroom') ? 'class-errors':'' }}"
+                                                    placeholder="bath" value="" >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Living</label>
+                                                <input type="number" min="0" name="living_room"
+                                                    class="form-control  {{$errors->has('living_room') ? 'class-errors':'' }}" placeholder="living " value=""
+                                                    >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+    
+                                                <label>Hall</label>
+                                                <input type="number" min="0" name="hall" class="form-control  {{$errors->has('hall') ? 'class-errors':'' }}"
+                                                    placeholder="hall" value="" >
+                                                <div id="title"></div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="class-form">
+    
+                                    <div class="row ">
+                                        <div class="col-lg-3">
+                                            <div class=" form-group">
+                                                <label>House Type</label>
+                                                <select name="house_type" id="" class="form-control  {{$errors->has('house_type') ? 'class-errors':'' }}">
+                                                    <option value="" selected="0">House Type</option>
+                                                    <option value="Commerical">Commerical</option>
+                                                    <option value="Residental">Residential</option>
+                                                </select>
+    
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-lg-3">
+                                            <div class=" form-group">
+                                                <label>Drainage</label>
+                                                <select name="drainage" id="" class="form-control  {{$errors->has('drainage') ? 'class-errors':'' }}">
+                                                    <option value="" selected="0">Drainage</option>
+                                                    <option value="Sewage">Sewage</option>
+                                                    <option value="Septic Tank">Septic Tank</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class=" form-group ">
+                                                <label for="">Built Year </label>
+                                                <input type="number" id="build-on" name="build" placeholder="1918"
+                                                    class="form-control  {{$errors->has('build') ? 'class-errors':'' }}" >
+                                                <select name="date_type" id="property-date" class="form-control  {{$errors->has('date_type') ? 'class-errors':'' }}">
+                                                    <option value="" selected="">✓</option>
+                                                    <option value="A.D">A.D</option>
+                                                    <option value="B.S">B.S</option>
+                                                </select>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class=" form-group">
+                                                <label for="">Shape</label>
+                                                <select name="shape" id="" class="form-control  {{$errors->has('shape') ? 'class-errors':'' }}">
+                                                    <option value="" selected="">Select Shape</option>
+                                                    <option value="Round">Round</option>
+                                                    <option value="Square">Square</option>
+                                                </select>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="class-form">
+
+                                <div class="row ">
+                                    <div class="col-lg-4">
+                                        <div class=" form-group ">
+                                            <label for="">Plot Number</label>
+                                            <input type="text" name="plot_no" placeholder="Plot number"
+                                                class="form-control  {{$errors->has('plot_no') ? 'class-errors':'' }} " value="">
+                                            <span class="text-danger"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class=" form-group ">
+                                            <label for="">Area</label>
+                                            <input type="text" name="area" placeholder="0-0-0-0"
+                                                class="form-control  {{$errors->has('area') ? 'class-errors':'' }}">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="">Unit</label>
+                                        <select name="land_unit" class="form-control  {{$errors->has('land_unit') ? 'class-errors':'' }}">
+                                            <option value="" selected="">Select Unit</option>
+                                            <option value="dhur">dhur</option>
+                                            <option value="anna">anna</option>
+                                            <option value="ropani">ropani</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="class-form">
+
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class=" form-group">
+                                            <label for="">Road Size</label>
+                                            <input type="text" name="road_size" placeholder="Road Size"
+                                                class=" form-control  {{$errors->has('road_size') ? 'class-errors':'' }} " value="">
+                                            <span class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                    
+                                        <div class="rent">
+                                            <label for="">Payment Period</label>
+
+                                            <select name="rent_option" class="form-control  {{$errors->has('rent_option') ? 'class-errors':'' }}">
+                                                <option selected="" value="">Choose</option>
+                                                <option value="monthly">Monthly</option>
+                                                <option value="annualy">Annualy</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+
+                                            <label>Price</label>
+                                            <input type="number" min="0" name="price" class="form-control  {{$errors->has('price') ? 'class-errors':'' }}"
+                                                placeholder="price" value="" >
+                                            <div id="title"></div>
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="first-row">
+
+                            <h3>Aminities</h3>
+                            <div class="class-form">
+
+                                <div class="row">
+                                    <div class=" form-group">
+
+
+                                        <ul class="aminites-list">
+                                            @foreach($aminites->chunk(4,true) as $chunk)
+
+                                            @foreach($chunk as $value)
+                                            <li>
+                                                <label class="main">{{$value->name}}
+                                                    <input class="check-price  {{$errors->has('aminities') ? 'class-errors':'' }}" type="checkbox"
+                                                        name="aminites[{{$value->id}}] ">
+                                                    <span class="w3docs"></span>
+                                                </label>
+                                            </li>
+
+
+
+                                            @endforeach
+
+                                            @endforeach
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="first-row">
+
+                            <h3>Owner Details</h3>
+
+                            <div class="class-form">
+
+                                <div class="row">
+                                    <div class="form-card">
+                                        <div class="title" style="padding-bottom: 33px;">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                  
+                                                        <input type="text" name="name" placeholder="Name"
+                                                            class="form-control  {{$errors->has('name') ? 'class-errors':'' }}">
+                                                        <span class="text-danger"></span>
+
+                                                  
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    
+                                                        <input type="number" name="contact" placeholder="Contact Number"
+                                                            class=" form-control form-input">
+                                                        <span class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title sell" style="padding-bottom: 33px;">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    
+                                                        <input type="number" name="citizen" class="form-control"
+                                                            placeholder="Citizenship Number">
+                                                        <span class="text-danger"></span>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <div id="hide-upload" class="ownerUpload">
+                                                        
+                                                        <input type="file" name="owner_image" id="ownerUpload"
+                                                            class="hide">
+                                                        <label for="ownerUpload"
+                                                            class="btn btn-large form-control" id=owner-upload-btn>Citizenship
+                                                            Image</label><br><br>
+                                                        <img src="" id="ownerPreview" alt="Preview Image"
+                                                            style="display:none;width:80px;height:80px;  top: 5px;    right: 24%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="first-row">
+
+                            <h3>Owner Details</h3>
+                            <div class="class-form">
+
+                                <div class="row">
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group ">
+                                            
+                                            <div id="hide-upload" class="propertyUpload">
+                                                <input type="file" name="image" id="propertyUpload"
+                                                    class="hide  ">
+                                                <label for="propertyUpload"
+                                                    class="btn btn-large form-control {{$errors->has('image') ? 'class-errors':'' }}">Thumbnail</label><br><br>
+                                                <img src="" id="propertyPreview" alt="Preview Image"
+                                                    style="display:none;width:80px;height:80px; top: 5px;    right: 24%;">
+
+                                            </div>
+                                            <input type="hidden" name="image" 
+                                            class="image-load">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group ">
+                                          
+                                            <div id="hide-upload" class="paperUpload">
+                                                <input type="file" name="property_image" id="paperUpload" class="hide">
+                                                <label for="paperUpload" class="btn btn-large form-control">Upload
+                                                    goverment Paper</label><br><br>
+                                                <img src="" id="paperPreview" alt="Preview Image"
+                                                    style="display:none;width:80px;height:80px;  top: 5px;    right: 15%;">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+
+                                        <div class="form-group ">
+                                          
+                                            <div id="hide-upload" class="paperUpload">
+                                                <input type="file" name="property_paper" id="lalapurjaUpload"
+                                                    class="hide ">
+                                                <label for="lalapurjaUpload"
+                                                    class="btn btn-large form-control">Lalapurja</label><br><br>
+                                                <img src="" id="lalapurjaPreview" alt="Preview Image"
+                                                    style="display:none;width:80px;height:80px; top: 5px;    right: 15%;">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="class-form">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="">OverView</label>
+                                        <textarea name="short_description" class="form-control  {{$errors->has('near_by') ? 'class-errors':'' }}"
+                                            placeholder="Overview of your property" id="" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button class="btn btn-primary">Submit
+                            </button>
+                        </div>
+                        <!-- checkbox -->
+
+
+                        {!! Form::close() !!}
+
+                        {{--</form>--}}
+                        <!-- /.box -->
+
+
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+
+            <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+@endsection
+@section('js_script')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#property-image").on('change', function () {
+            readURL(this);
+        });
+        var readURL = function (input) {
+            $('#property-preview').css('display', 'block');
+            $('#delete-image').css('display', 'block');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#property-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#owner-image").on('change', function () {
+            readURLImage(this);
+        });
+        var readURLImage = function (input) {
+            $('#owner-preview-image').css('display', 'block');
+            $('#delete-image').css('display', 'block');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#owner-preview-image').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $('#delete-image').click(function () {
+            $('#user-preview').attr('src', '');
+            $('#delete-image').css('display', 'none');
+
+        });
+    
+        $('#category').on('change', function () {
+            $('#section').empty();
+            var value = $(this).val();
+           
+            var url = '{{route('admin.property.getsubcategory')}}';
+           
+            select(value, url).then(function(){
+            var subcategory = $('#subcategory option:selected').text();
+                    console.log(subcategory);
+                    if(subcategory == 'Rent'){
+                         $('.rent').css('display','block');
+                    }else{
+                        $('.rent').css('display','none');  
+                    }
+                });
+           
+
+            
+        });
+        $('#subcategory').on('change',function(){
+            var subcategory = $('#subcategory option:selected').text();
+                    if(subcategory == 'Rent'){
+                         $('.rent').css('display','block');
+                    }else{
+                        $('.rent').css('display','none');  
+                    }
+        })
+
+        
+        
+        function select(value, url) {
+            return $.ajax({
+                type: 'get',
+                url: url,
+                data: { category_id: value },
+                dataType: 'json',
+                success: function (response) {
+                    var category = $('#category option:selected').text();
+                    if(category == 'Land'){
+                         $('.house').css('display','none');
+                    }else{
+                        $('.house').css('display','block');  
+                    }
+
+                    
+
+                    if (response.success == true) {
+                        var value = response.sucategory;
+                        var option = '';
+
+                        $.each(value, function (key, value) {
+
+                            option += '<option  value="' + value.id + '">' + value.title + '</option:selectedoption>';
+                        });
+
+                        $('#subcategory').html(option).show();
+                    } else {
+                        $('#subcategory').empty();
+                    }
+
+                }
+            })
+        }
+
+        $('#location').on('change', function () {
+            var value = $(this).val();
+            var url = '{{route('admin.property.getplace')}}';
+            getplace(value, url);
+        });
+
+        function getplace(value, url) {
+            $.ajax({
+                type: 'get',
+                url: url,
+                data: { location_id: value },
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    if (response.success == true) {
+                        var value = response.place;
+                        var option = '';
+
+                        $.each(value, function (key, value) {
+
+                            option += '<option selected="selected" value="' + value.id + '">' + value.name + '</option:selectedoption>';
+                        });
+
+                        $('#place').html(option).show();
+                    } else {
+                        $('#place').empty();
+                    }
+
+                }
+            })
+        }
+        $('#propertyUpload').change(function(){
+    $('.propertyUpload  label').removeClass('invalid');
+    readImgUrlAndPreview(this);
+    function readImgUrlAndPreview(input){
+        $('#hide-upload #propertyPreview').css('display','block');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#hide-upload #propertyPreview').attr('src', e.target.result);
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+})
+$('#paperUpload').change(function(){
+
+    readImgUrlAndPreview(this);
+    function readImgUrlAndPreview(input){
+        $('#hide-upload #paperPreview').css('display','block');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#hide-upload #paperPreview').attr('src', e.target.result);
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+})
+$('#ownerUpload').change(function(){
+
+    readImgUrlAndPreview(this);
+    function readImgUrlAndPreview(input){
+        $('#hide-upload #ownerPreview').css('display','block');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#hide-upload #ownerPreview').attr('src', e.target.result);
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+})
+$('#lalapurjaUpload').change(function(){
+
+    readImgUrlAndPreview(this);
+    function readImgUrlAndPreview(input){
+        $('#hide-upload #lalapurjaPreview').css('display','block');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#hide-upload #lalapurjaPreview').attr('src', e.target.result);
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+})
+
+$('.admin-property-store').on('submit',function(){
+ var  x, y, i, valid = true;
+    var x = document.getElementsByClassName('tab');
+        y = x[currentTab].getElementsByClassName("form-input");
+
+
+    // var aminite = ;
+
+    // y = x[currentTab].getElementsByTagName("input");
+
+    z =x[currentTab].getElementsByClassName('form-input option:selected');
+
+    f =x[currentTab].getElementsByClassName("hide form-input");
+
+    if(x[currentTab].id ==  "fourth"){
+
+        if( document.getElementById("propertyUpload").files.length == 0 ){
+            $('.propertyUpload .btn').addClass('invalid');
+        }
+
+    }
+    if(x[currentTab].id ==  "second"){
+
+
+        if($('.check-price:checkbox:checked').length <= 0){
+            $('.aminites-list .w3docs').addClass('invalid');
+            valid = false;
+        }
+
+    }
+
+
+    // if(  == 0 ){
+    //     $('.check-price').addClass('invalid');
+    // }
+
+
+
+
+
+
+    for (i = 0; i < z; i++) {
+        // If a field is empty...
+
+
+        if (z[i].value == "") {
+            // add an "invalid" class to the field:
+            z[i].addclass('invalid');
+            // and set the current valid status to false
+            valid = false;
+        }else {
+            z[i].className = z[i].className.replace(" invalid", "");
+        }
+
+    }
+
+    // if(aminite.length <= 0){
+
+    //     $('#aminite-value').addClass('invalid');
+    // }
+    // else{
+    //     $('#aminite-value').addClass('invalid');
+    // }
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+        // If a field is empty...
+
+
+        if (y[i].value == "") {
+
+            // add an "invalid" class to the field:
+            y[i].className += " invalid";
+            // and set the current valid status to false
+            valid = false;
+        }
+
+    }
+
+
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+
+        document.getElementsByClassName("step")[currentTab].className += " finish";
+    }
+    return valid;
+});
+
+    });
+
+
+</script>
+
+
+
+
+@endsection --}}

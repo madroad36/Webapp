@@ -1,0 +1,53 @@
+// footer
+footer{
+    font-family: $zfont;
+    font-weight: 200;
+    font-size: 0.80rem;
+    line-height: 1.8rem;
+    color: $zlight;
+    .title {
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+    .container-fluid{
+        background-color: $zdark;
+    }
+    .title {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    }
+    a{
+        font-weight: 300;
+        color: $zlight;
+        &:hover{
+            color: grey;
+        }
+    }
+    h5{
+        display: inline;
+        color: $zprime-2;
+    }
+    span{
+        font-family: $zfont;
+    }
+    input::placeholder{
+        font-family: $zfont;
+        font-size: 0.80rem;
+        font-weight: 300;
+    }
+    .form-control:focus{
+        border-color: $zprime-2;
+        box-shadow: 0 0 0 0.2rem rgba(101, 123, 0, 0.25);
+    }
+    .btn-subscrive{
+        background-color: $zprime-2;
+        border-radius: 0 0.25rem 0.25rem 0;
+    }
+    .footer-top-image{
+        width: 100%;
+        height: 147px;
+        background: url(../img/footer.png) no-repeat center bottom / cover;
+    }
+}
