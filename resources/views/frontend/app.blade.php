@@ -337,7 +337,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             <div class="row  px-3  pt-5">
                 <div class="col-md-3 col-6">
                     <div class="title text-center">
-                        @if($settinng && file_exists('storage/'.$setting->image) && $setting->image != '')
+                        @if($setting && file_exists('storage/'.$setting->image) && $setting->image != '')
                         <img src="{{asset('storage/'.$setting->image)}}" alt="your image" style="height: 100%; width:100px;"/>
                         @else
                         <img src="{{asset('frontend/img/zillicom_logo.svg')}}" alt="logo-image" style="height: 100%; width:100px;">
