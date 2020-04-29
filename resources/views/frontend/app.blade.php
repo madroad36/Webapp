@@ -282,7 +282,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="{{route('home')}}">
-                        @if(file_exists('storage/'.$setting->image) && $setting->image != '')
+                        @if($setting && file_exists('storage/'.$setting->image) && $setting->image != '')
                         <img src="{{asset('storage/'.$setting->image)}}" alt="your image" style="height: 100%; width:100px;"/>
                         @else
                         <img src="{{asset('frontend/img/zillicom_logo.svg')}}" alt="logo-image" style="height: 100%; width:100px;">
@@ -296,7 +296,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                 </a>
                                 <div class="dropdown-menu"> 
                                     @foreach($categories as $category)
-                                    <a class="dropdown-item" href="{{url('/property/'.$category->slug)}}">{{$category->name}}</a>
+                                    <a class="dropdown-item" href="{{url('/property/'.$category->slug)}}">{{ucfirst($category->name)}}</a>
                                     @endforeach
                                 </div>
                             </li>
@@ -306,7 +306,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                 </a>
                                 <div class="dropdown-menu">
                                     @foreach($productCategories as $product)
-                                    <a class="dropdown-item" href="{{route('product.category.show',[$product->slug])}}">{{$product->title}}</a>
+                                    <a class="dropdown-item" href="{{route('product.category.show',[$product->slug])}}">{{ucfirst($product->title)}}</a>
                                     @endforeach
                                 </div>
                             </li>
@@ -337,7 +337,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             <div class="row  px-3  pt-5">
                 <div class="col-md-3 col-6">
                     <div class="title text-center">
-                        @if($setting && file_exists('storage/'.$setting->image) && $setting->image != '')
+                        @if($settinng && file_exists('storage/'.$setting->image) && $setting->image != '')
                         <img src="{{asset('storage/'.$setting->image)}}" alt="your image" style="height: 100%; width:100px;"/>
                         @else
                         <img src="{{asset('frontend/img/zillicom_logo.svg')}}" alt="logo-image" style="height: 100%; width:100px;">
